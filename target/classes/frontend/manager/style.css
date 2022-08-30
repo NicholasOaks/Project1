@@ -19,7 +19,7 @@
 #logout{
     justify-content: right;
     width: 70px;
-
+    margin-right: 20px;
 }
 
 #title-filler{
@@ -104,8 +104,36 @@
     flex-direction: column;
 }
 
-.btn{
-    margin-top: 10px;
+
+.reim-sort-options{
+    display: flex;
+    justify-content: space-evenly;
 }
+
+#all{
+    margin-top: 10px;
+    width:20%;
+    height: 50px;
+    
+}
+
+#pending{
+    margin-top: 10px;
+    width:20%;
+    height: 50px;
+}
+
+#denied{
+    margin-top: 10px;
+    width:20%;
+    height: 50px;
+}
+
+#approved{
+    margin-top: 10px;
+    width:20%;
+    height: 50px;
+}
+
 
 

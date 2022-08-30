@@ -108,6 +108,42 @@ function displayReims(){
         aproveBtnElem.className = "btn btn-success";
         aproveBtnElem.innerText = "Approve";
 
+        denyBtnElem.addEventListener("click", async (event) =>{
+            event.preventDefault();
+
+            console.log("Clicked deny")
+
+            await fetch("/api/deny", {
+                method: "PATCH",
+                body: JSON.stringify({
+                    "id":reim.id
+                })
+            })
+
+            denyBtnElem.remove();
+            aproveBtnElem.remove();
+            status.innerText=`Denied`
+
+        })
+
+        aproveBtnElem.addEventListener("click", async (event) =>{
+            event.preventDefault();
+
+            console.log("Clicked approve")
+
+            await fetch("/api/approve", {
+                method: "PATCH",
+                body: JSON.stringify({
+                    "id":reim.id
+                })
+            })
+
+            denyBtnElem.remove();
+            aproveBtnElem.remove();
+            status.innerText=`Approved`
+
+        })
+
         
 
 
