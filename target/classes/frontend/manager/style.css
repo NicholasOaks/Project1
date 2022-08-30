@@ -1,0 +1,111 @@
+#title-plate{
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background-color: rgb(18, 18, 41);
+}
+
+#title{
+    justify-content: center;
+    align-items: center;
+
+    color: aliceblue;
+}
+
+#logout{
+    justify-content: right;
+    width: 70px;
+
+}
+
+#title-filler{
+    width: 70px
+}
+
+#reim-container{
+    display:flex;
+    flex-direction: column;
+}
+
+.reim{
+    justify-content: space-between;
+    margin: 10px;
+    min-height: 80px;
+    min-width: 500px;
+    display:flex;
+    background-color: gray;
+    border-radius: 5px;
+
+}
+
+.left-side{
+    margin: 10px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: darkgray;
+}
+
+#top-layer{
+    margin-top: 4px;
+    margin-left: 8px;
+    margin-right: 4px;
+    
+}
+
+#submitted{
+    margin-left:8px;
+    margin-top: 4px;
+}
+
+#approved{
+    margin-left: 8px;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}
+
+.description-box{
+    margin: 4px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    
+}
+
+.description{
+    margin-left: 4px;
+}
+
+.status-block{
+    margin: 15px;
+    height: 45px;
+    width: 20%;
+    background-color:azure;
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#status{
+    margin-top: 9px;
+}
+
+.reim-form{
+    display:flex;
+    flex-direction: row;
+}
+
+.form{
+    margin-top: 10px;
+    display:flex;
+    flex-direction: column;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+
