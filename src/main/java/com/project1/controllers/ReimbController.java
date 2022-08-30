@@ -31,8 +31,9 @@ public class ReimbController {
 
     public void createLodgingReimb(Context ctx){
         Reimbursement reim = ctx.bodyAsClass(Reimbursement.class);
+        User user = ctx.sessionAttribute("user");
 
-        rs.createLodgingReimbursement(reim.getAmount(), reim.getDescritpion(), reim.getAuthorId());
+        rs.createLodgingReimbursement(reim.getAmount(), reim.getDescritpion(), user.getId());
 
         ctx.json(new JsonResponce(true, "Lodging reimbursement submitted", null));
 
@@ -40,8 +41,9 @@ public class ReimbController {
 
     public void createTravelReimb(Context ctx){
         Reimbursement reim = ctx.bodyAsClass(Reimbursement.class);
+        User user = ctx.sessionAttribute("user");
 
-        rs.createTravelReimbursement(reim.getAmount(), reim.getDescritpion(), reim.getAuthorId());
+        rs.createTravelReimbursement(reim.getAmount(), reim.getDescritpion(), user.getId());
 
         ctx.json(new JsonResponce(true, "Travel reimbursement submitted", null));
 
@@ -49,8 +51,9 @@ public class ReimbController {
 
     public void createFoodReimb(Context ctx){
         Reimbursement reim = ctx.bodyAsClass(Reimbursement.class);
+        User user = ctx.sessionAttribute("user");
 
-        rs.createFoodReimbursement(reim.getAmount(), reim.getDescritpion(), reim.getAuthorId());
+        rs.createFoodReimbursement(reim.getAmount(), reim.getDescritpion(), user.getId());
 
         ctx.json(new JsonResponce(true, "Food reimbursement submitted", null));
 
@@ -58,8 +61,9 @@ public class ReimbController {
 
     public void createOtherReimb(Context ctx){
         Reimbursement reim = ctx.bodyAsClass(Reimbursement.class);
+        User user = ctx.sessionAttribute("user");
    
-        rs.createOtherReimbursement(reim.getAmount(), reim.getDescritpion(), reim.getAuthorId());
+        rs.createOtherReimbursement(reim.getAmount(), reim.getDescritpion(), user.getId());
 
         ctx.json(new JsonResponce(true, "Other reimbursement submitted", null));
 

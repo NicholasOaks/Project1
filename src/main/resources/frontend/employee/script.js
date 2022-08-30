@@ -99,5 +99,78 @@ function displayReims(){
         reimsContainer.appendChild(reimElem);
 
     });
-
 }
+
+let addReimFormElem = document.getElementById("add-reim");
+        addReimFormElem.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            let selectForm = document.getElementById("type-select");
+            let selectType = selectForm.value;
+
+            let amount = document.getElementById("amount");
+            let descr = document.getElementById("description");
+
+            if(selectType == 0){
+                let response = await fetch("/api/create-other", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "amount":amount.value,
+                        "descritpion":descr.value
+                    })
+                })
+
+                let responsBody = await response.json();
+
+                reimsContainer.innerHTML = "";
+                reims = await getAllReims();
+                displayReims();
+            }
+            else if(selectType == 1){
+                let response = await fetch("/api/create-travel", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "amount":amount.value,
+                        "descritpion":descr.value
+                    })
+                })
+
+                let responsBody = await response.json();
+
+                reimsContainer.innerHTML = "";
+                reims = await getAllReims();
+                displayReims();
+            }
+            else if(selectType == 2){
+                let response = await fetch("/api/create-food", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "amount":amount.value,
+                        "descritpion":descr.value
+                    })
+                })
+
+                let responsBody = await response.json();
+
+                reimsContainer.innerHTML = "";
+                reims = await getAllReims();
+                displayReims();
+
+            }
+            else if(selectType == 3){
+                let response = await fetch("/api/create-lodging", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        "amount":amount.value,
+                        "descritpion":descr.value
+                    })
+                })
+
+                let responsBody = await response.json();
+
+                reimsContainer.innerHTML = "";
+                reims = await getAllReims();
+                displayReims();
+            }
+            
+        })

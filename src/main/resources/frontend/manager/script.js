@@ -108,6 +108,8 @@ function displayReims(){
         aproveBtnElem.className = "btn btn-success";
         aproveBtnElem.innerText = "Approve";
 
+        
+
 
         leftSide.appendChild(topLayer);
         leftSide.appendChild(submitted);

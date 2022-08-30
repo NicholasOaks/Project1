@@ -94,5 +94,39 @@
     margin-top: 9px;
 }
 
+#add-reim{
+    width: 100%;
+
+    position: fixed;
+
+    bottom: 0px;
+
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(26, 26, 26);
+    padding: 10px;
+
+}
+
+#add-reim{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-select{
+    width:10%;
+}
+
+#amount{
+    width: 10%;
+}
+
+#description{
+    width: 50%;
+}
+
+
+
 
 

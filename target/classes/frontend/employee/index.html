@@ -25,6 +25,18 @@
         
     </div>
 
+    <form id="add-reim">
+        <select id="type-select" class="form-select" aria-label="type" required>
+            <option value="0" selected>Other</option>
+            <option value="1">Travel</option>
+            <option value="2">Food</option>
+            <option value="3">Lodging</option>
+          </select>
+        <input type="number" step="0.01" id="amount" placeholder="amount" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <button class="btn btn-success">Create Reimbursement</button>
+    </form>
+
   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
