@@ -80,11 +80,33 @@
     margin-left: 4px;
 }
 
-.status-block{
+.status-block-pending{
     margin: 15px;
     height: 45px;
     width: 20%;
-    background-color:azure;
+    background-color:rgb(212, 212, 41);
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-block-approved{
+    margin: 15px;
+    height: 45px;
+    width: 20%;
+    background-color:yellowgreen;
+    border-radius: 5px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-block-denied{
+    margin: 15px;
+    height: 45px;
+    width: 20%;
+    background-color:firebrick;
     border-radius: 5px;
     display:flex;
     flex-direction: column;
@@ -120,18 +142,21 @@
 }
 
 #pending{
+    background-color:rgb(212, 212, 41);
     margin-top: 10px;
     width:20%;
     height: 50px;
 }
 
 #denied{
+    background-color:firebrick;
     margin-top: 10px;
     width:20%;
     height: 50px;
 }
 
 #approved{
+    background-color:yellowgreen;
     margin-top: 10px;
     width:20%;
     height: 50px;

@@ -82,7 +82,16 @@ function displayReims(){
         description.innerText= `${reim.descritpion}`;
 
         let statusBlock = document.createElement("div");
-        statusBlock.className = "status-block";
+        if(reim.status == "Pending"){
+            statusBlock.className = "status-block-pending";
+        }
+        else if(reim.status == "Approved"){
+            statusBlock.className = "status-block-approved";
+        }
+        else if(reim.status == "Denied"){
+            statusBlock.className = "status-block-denied";
+        }
+        
 
         let status = document.createElement("div");
         status.id = "status";
