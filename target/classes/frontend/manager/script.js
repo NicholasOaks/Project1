@@ -28,11 +28,75 @@ async function getAllReims(){
     return responsBody.data;
 }
 
+async function getAllPendingReims(){
+    let response = await fetch("/api/get-all-reims/pending");
+
+    let responsBody = await response.json();
+
+    return responsBody.data;
+}
+
+async function getAllApprovedReims(){
+    let response = await fetch("/api/get-all-reims/approved");
+
+    let responsBody = await response.json();
+
+    return responsBody.data;
+}
+
+async function getAllDeniedReims(){
+    let response = await fetch("/api/get-all-reims/denied");
+
+    let responsBody = await response.json();
+
+    return responsBody.data;
+}
+
 let logoutBtn = document.getElementById("logout-btn");
 logoutBtn.addEventListener("click", () => {
     fetch("/api/session", { method: "DELETE" });
     window.location = "../";
 });
+
+let allButton = document.getElementById("all");
+allButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    reimsContainer.innerHTML = "";
+    reims = await getAllReims();
+    displayReims();
+});
+
+let pendButton = document.getElementById("pending");
+pendButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    reimsContainer.innerHTML = "";
+    reims = await getAllPendingReims();
+    displayReims();
+});
+
+let deniedButton = document.getElementById("denied");
+deniedButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    reimsContainer.innerHTML = "";
+    reims = await getAllDeniedReims();
+    displayReims();
+});
+
+let approvedButton = document.getElementById("approved");
+approvedButton.addEventListener("click", async (event) => {
+    event.preventDefault();
+
+    reimsContainer.innerHTML = "";
+    reims = await getAllApprovedReims();
+    displayReims();
+});
+    
+
+
+
 
 /* 
     <div class = reim-form>
@@ -76,11 +140,11 @@ function displayReims(){
         topLayer.innerText = `${reim.type} worth ${reim.amount}$`
 
         let submitted = document.createElement("div");
-        submitted.id = "submitted"
+        submitted.id = "submitted-date"
         submitted.innerText = `Submitted: ${reim.submitted}`
 
         let approved = document.createElement("div");
-        approved.id = "approved";
+        approved.id = "approved-date";
         approved.innerText = `Approved: ${reim.resolved}`
 
         let descriptionBox = document.createElement("div");
@@ -102,10 +166,12 @@ function displayReims(){
 
         let denyBtnElem = document.createElement("button");
         denyBtnElem.className = ("btn btn-danger");
+        denyBtnElem.id = "deny-button";
         denyBtnElem.innerText = "Deny";
 
         let aproveBtnElem = document.createElement("button");
         aproveBtnElem.className = "btn btn-success";
+        aproveBtnElem.id = "approve-button";
         aproveBtnElem.innerText = "Approve";
 
         denyBtnElem.addEventListener("click", async (event) =>{

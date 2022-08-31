@@ -28,6 +28,9 @@ public class App
         //reimbursement endpoints
         app.get("/api/get-all-reims", rc::getAllReimbs);
         app.get("/api/get-reims-id", rc::getReimbsFromUserId);
+        app.get("/api/get-all-reims/pending", rc::getAllPendingReimbs);
+        app.get("/api/get-all-reims/approved", rc::getAllApprovedReimbs);
+        app.get("/api/get-all-reims/denied", rc::getAllDeniedReimbs);
 
         app.post("/api/create-lodging", rc::createLodgingReimb);
         app.post("/api/create-travel", rc::createTravelReimb);

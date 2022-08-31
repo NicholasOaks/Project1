@@ -21,6 +21,30 @@ public class ReimbController {
 
     }
 
+    public void getAllPendingReimbs(Context ctx){
+
+        List<Reimbursement> list = rs.getAllReimArePending();
+
+        ctx.json(new JsonResponce(true, "Retrieving all pending reimbursements", list));
+
+    }
+
+    public void getAllApprovedReimbs(Context ctx){
+
+        List<Reimbursement> list = rs.getAllReimAreApproved();
+
+        ctx.json(new JsonResponce(true, "Retrieving all approved reimbursements", list));
+
+    }
+
+    public void getAllDeniedReimbs(Context ctx){
+
+        List<Reimbursement> list = rs.getAllReimAreDenied();
+
+        ctx.json(new JsonResponce(true, "Retrieving all denied reimbursements", list));
+
+    }
+
     public void getReimbsFromUserId(Context ctx){
         User user = ctx.sessionAttribute("user");
 
